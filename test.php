@@ -3,8 +3,13 @@
 $tag = new TAG;
 $tag->fileScan();
 
-$a = $tag->contentSet();
+$a = $tag->tagContentSet();
 var_dump($a);
+
+$tag->quoteScan();
+$b = $tag->quoteContentSet();
+
+var_dump($b);
 
 class TAG
 {
@@ -16,7 +21,52 @@ class TAG
   private $LINE_SIZE = array();
   private $BUFFER = array();
   private $FILE = "index.html";
+  private $QUOTE = array();
 
+
+  function searchPhp($b)
+  {
+    $i = strpos($b, "<?php");
+  }
+
+  function quoteScan()
+  {
+
+    $offset = 0;
+    $c = 0;
+    $f = false;
+
+
+    for ($i = 1, $l = count($this->BUFFER); $i < $l + 1; $i++) {
+      $next_flag = true;
+      while ($next_flag) {
+        $b = $this->BUFFER[$i];
+        $s = strpos($b, "'", $offset);
+        if ($s !== false) {
+          if ($f) {
+            $this->QUOTE[$c]['line_end'] = $i;
+            $this->QUOTE[$c]['end'] = $s;
+            $c++;
+            $f = false;
+          } else {
+            $this->QUOTE[$c] = array('line_start' => $i, 'start' => $s, 'line_end' => null, 'end' => null);
+            $f = true;
+          }
+          $offset = $s + 1;
+        } else {
+          $offset = 0;
+          $next_flag = false;
+        }
+      }
+
+    }
+
+  }
+
+  function getQuote()
+  {
+    return $this->QUOTE;
+  }
 
   function getTag()
   {
@@ -28,7 +78,16 @@ class TAG
     return $this->LINE_SIZE;
   }
 
-  function contentSet()
+  function quoteContentSet()
+  {
+    for ($i = 0, $l = count($this->QUOTE); $i < $l; $i++) {
+      $this->QUOTE[$i]['content'] = $this->getContent($this->QUOTE[$i]['line_start'], $this->QUOTE[$i]['start'], $this->QUOTE[$i]['line_end'], $this->QUOTE[$i]['end']);
+    }
+
+    return $this->QUOTE;
+  }
+
+  function tagContentSet()
   {
     for ($i = 0, $l = count($this->TAG); $i < $l; $i++) {
       $this->TAG[$i]['content'] = $this->getContent($this->TAG[$i]['line_start'], $this->TAG[$i]['offset_start'], $this->TAG[$i]['line_end'], $this->TAG[$i]['offset_end']);
@@ -49,7 +108,7 @@ class TAG
         if ($n === $line_start) {
           $content .= substr($this->BUFFER[$n], $offset_start, strlen($this->BUFFER[$line_start]) - $offset_start);
         } elseif ($n === $line_end) {
-          $content .= substr($this->BUFFER[$n], 0, $offset_end);
+          $content .= substr($this->BUFFER[$n], 0, $offset_end + 1);
         } else {
           $content .= $this->BUFFER[$n];
         }
