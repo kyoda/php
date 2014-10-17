@@ -8,7 +8,7 @@ var_dump(preg_split("//u", $a, -1, PREG_SPLIT_NO_EMPTY));
 */
 
 
-$r = preg_replace('/(.*)(\/\/|#).*/', '\1', 'aiueo // # あいうえお');
+$r = preg_replace('/(\/\/|#).*/', '', 'aiueo #//#/// あいうえお //aaa');
 print $r."\n";
 
 $dir = ".";
