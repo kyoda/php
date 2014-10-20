@@ -8,10 +8,8 @@ var_dump(preg_split("//u", $a, -1, PREG_SPLIT_NO_EMPTY));
 */
 
 
-$r = preg_replace('/(\/\/|#).*/', '', 'aiueo #//#/// あいうえお //aaa');
-print $r."\n";
-
-print  preg_replace('/(\/\/|#).*/', '\1', 'aiueo #//#/// あいうえお //aaa') ."\n";
+print preg_replace('/(\/\/|#).*/', '', 'aiueo #//#/// あいうえお //aaa') ."\n";
+print preg_replace('/(\/\/|#).*/', '\1', 'aiueo #//#/// あいうえお //aaa') ."\n";
 
 $dir = ".";
 
@@ -20,4 +18,5 @@ $a = new LocateFile();
 
 $list = $a->getFileList($dir);
 //var_dump($list);
+
 
