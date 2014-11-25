@@ -1,6 +1,9 @@
 <?php
 
 
+echo round(100*1.1) ."\n";
+echo round(105*1.1) ."\n";
+
 /*
 $a = "あaいiうuえお";
 print mb_detect_encoding($a)."\n";
