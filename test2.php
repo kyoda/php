@@ -3,6 +3,9 @@
 
 echo round(100*1.1) ."\n";
 echo round(105*1.1) ."\n";
+echo round(100*1.08) ."\n";
+echo ((int)100.4)."\n";
+echo ((int)100.9)."\n";
 
 /*
 $a = "あaいiうuえお";
