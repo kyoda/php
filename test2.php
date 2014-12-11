@@ -12,6 +12,7 @@ echo strlen($a) . ": " . $a ."\n";
 echo strlen($b) . ": " . $b ."\n";
 echo strlen((int)$b) . ": " . $b ."\n";
 echo ((float)$a)."\n";
+echo ((int)$a)."\n";
 
 /*
 $a = "あaいiうuえお";
