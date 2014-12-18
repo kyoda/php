@@ -1,6 +1,6 @@
 <?php
 
-define("MAX", 10000);
+define("MAX", 100000);
 
 function cmp($a, $b)
 {
