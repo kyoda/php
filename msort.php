@@ -9,7 +9,7 @@ function cmp($a, $b)
 
 function rcmp($a, $b)
 {
-  return strcmp($a['id'], $b['id']);
+  return strcmp($a['name'], $b['name']);
 }
 
 
@@ -20,6 +20,7 @@ for ($i = 0; $i < MAX; $i++) {
   $arr[] = array('name' => sprintf("%010d", $i), 'num' => mt_rand());
 }
 usort($arr, 'cmp');
+usort($arr, 'rcmp');
 //var_dump($arr);
 printf("%f sec\n", microtime(true) - $st);
 
