@@ -14,6 +14,7 @@ echo strlen((int)$b) . ": " . $b ."\n";
 echo ((float)$a)."\n";
 echo ((int)$a)."\n";
 echo ((double)$a)."\n";
+echo base_convert(27135346, 8, 10) ."\n";
 
 /*
 $a = "あaいiうuえお";
