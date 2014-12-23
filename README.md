@@ -1,4 +1,4 @@
 # Study PHP
 
-+ generater > v5.5
++ generater >= v5.5
 
