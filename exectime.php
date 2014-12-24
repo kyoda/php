@@ -2,7 +2,7 @@
 
 $st = microtime(true);
 
-sleep(1);
+sleep(2);
 printf("time: %f sec\n", microtime(true) - $st);
 
 
