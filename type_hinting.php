@@ -1,10 +1,14 @@
 <?php
 
-
 class TypeHinting 
 {
 
   private $VERSION = 0.1;
+
+  function __construct()
+  {
+    $this->VERSION = 0.2;
+  }
 
   public function dumpArr(array $str)
   {
