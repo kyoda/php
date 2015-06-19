@@ -11,14 +11,23 @@ function ifcal()
 
     $a = rand(1, 9);
     if ($a == 1) {
+      $a++;
     } elseif ( $a == 2) {
+      $a++;
     } elseif ( $a == 3) {
+      $a++;
     } elseif ( $a == 4) {
+      $a++;
     } elseif ( $a == 5) {
+      $a++;
     } elseif ( $a == 6) {
+      $a++;
     } elseif ( $a == 7) {
+      $a++;
     } elseif ( $a == 8) {
+      $a++;
     } elseif ( $a == 9) {
+      $a++;
     }
 
   }
@@ -36,22 +45,31 @@ function switchcal()
     $a = rand(1, 9);
     switch ($a) {
       case 1:
+        $a++;
         break;
       case 2:
+        $a++;
         break;
       case 3:
+        $a++;
         break;
       case 4:
+        $a++;
         break;
       case 5:
+        $a++;
         break;
       case 6:
+        $a++;
         break;
       case 7:
+        $a++;
         break;
       case 8:
+        $a++;
         break;
       case 9:
+        $a++;
         break;
     }
     $a = null;
