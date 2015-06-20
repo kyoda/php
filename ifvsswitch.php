@@ -6,28 +6,29 @@ function ifcal()
 {
 
   $st = microtime(true);
+  $b = 0;
 
   for ($i = 0; $i < MAX; $i++) {
 
     $a = rand(1, 9);
     if ($a == 1) {
-      $a++;
+      $b++;
     } elseif ( $a == 2) {
-      $a++;
+      $b++;
     } elseif ( $a == 3) {
-      $a++;
+      $b++;
     } elseif ( $a == 4) {
-      $a++;
+      $b++;
     } elseif ( $a == 5) {
-      $a++;
+      $b++;
     } elseif ( $a == 6) {
-      $a++;
+      $b++;
     } elseif ( $a == 7) {
-      $a++;
+      $b++;
     } elseif ( $a == 8) {
-      $a++;
+      $b++;
     } elseif ( $a == 9) {
-      $a++;
+      $b++;
     }
 
   }
@@ -40,36 +41,36 @@ function switchcal()
 {
 
   $st = microtime(true);
-
+  $b = 0;
   for ($i = 0; $i < MAX; $i++) {
     $a = rand(1, 9);
     switch ($a) {
       case 1:
-        $a++;
+        $b++;
         break;
       case 2:
-        $a++;
+        $b++;
         break;
       case 3:
-        $a++;
+        $b++;
         break;
       case 4:
-        $a++;
+        $b++;
         break;
       case 5:
-        $a++;
+        $b++;
         break;
       case 6:
-        $a++;
+        $b++;
         break;
       case 7:
-        $a++;
+        $b++;
         break;
       case 8:
-        $a++;
+        $b++;
         break;
       case 9:
-        $a++;
+        $b++;
         break;
     }
     $a = null;
