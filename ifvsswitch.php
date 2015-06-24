@@ -83,6 +83,6 @@ function switchcal()
   return $b;
 }
 
-echo switchcal();
-echo ifcal();
+printf("%d\n",switchcal());
+printf("%d\n",ifcal());
 
