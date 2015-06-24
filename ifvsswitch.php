@@ -29,6 +29,8 @@ function ifcal()
       $b += 8;
     } elseif ( $a == 9) {
       $b += 9;
+    } else {
+      $b += 10;
     }
 
   }
@@ -73,6 +75,9 @@ function switchcal()
         break;
       case 9:
         $b += 9;
+        break;
+      default:
+        $b += 10;
         break;
     }
     $a = null;
