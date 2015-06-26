@@ -88,6 +88,6 @@ function switchcal()
   return $b;
 }
 
-printf("%d\n",switchcal());
-printf("%d\n",ifcal());
+printf("%d\n", switchcal());
+printf("%d\n", ifcal());
 
