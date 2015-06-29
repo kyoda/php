@@ -35,7 +35,8 @@ function ifcal()
 
   }
 
-  printf("if_time: %f sec\n", microtime(true) - $st);
+  $en = microtime(true) - $st;
+  printf("if_time: %f sec\n", $en);
   
   return $b;
 
@@ -83,7 +84,8 @@ function switchcal()
     $a = null;
   }
 
-  printf("switch_time: %f sec\n", microtime(true) - $st);
+  $en = microtime(true) - $st;
+  printf("switch_time: %f sec\n", $en);
 
   return $b;
 }
