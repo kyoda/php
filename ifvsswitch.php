@@ -10,7 +10,7 @@ function ifcal()
 
   for ($i = 0; $i < MAX; $i++) {
 
-    $a = rand(1, 9);
+    $a = rand(1, 99);
     if ($a == 1) {
       $b += 1;
     } elseif ( $a == 2) {
@@ -47,7 +47,7 @@ function switchcal()
   $st = microtime(true);
   $b = 0;
   for ($i = 0; $i < MAX; $i++) {
-    $a = rand(1, 9);
+    $a = rand(1, 99);
     switch ($a) {
       case 1:
         $b += 1;
